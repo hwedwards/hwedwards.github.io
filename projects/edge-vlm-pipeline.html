@@ -65,6 +65,11 @@ figure{margin:1.2rem 0 0}figure img{display:block;width:100%;height:auto;border:
 </ol>
 <p class="note">For illustration, three workers with 2 GB free each can budget 1.5 GB of weights each for a hypothetical 4.5 GB model, leaving 0.5 GB each for runtime. Fit still requires measured peaks per worker. The measured 8.876 GB checkpoint cannot fit on those three workers even before runtime overhead. No wireless or airborne performance was measured.</p>
 </section>
+<section aria-labelledby="evolution">
+<h2 id="evolution">Design evolution</h2>
+<p>Compare the handwritten working notes with the formal UML and the separate laptop prototype. The sketches explore the idea and do not describe the current implementation.</p>
+<p><a href="../assets/docs/pipeline-parallel-inference-notes.pdf">Open the early handwritten design notes (PDF) →</a></p>
+</section>
 <section aria-labelledby="next">
 <h2 id="next">Next decision</h2>
 <p>On a representative inspection set, first compare a local small model using improved prompts, cropping and quantisation with a medium configuration that can fit on one device. Only pursue a larger split if it clears a meaningful task-quality threshold the simpler options miss. On a benchtop, measure per-stage peak RAM, transfers, time to first token, completion latency, deadline misses, and impact on the other workload. Test a wired baseline and link loss before drawing conclusions about wireless use.</p>
