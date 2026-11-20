@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Three drones, one model | Bob the Builder</title>
+<style>
+:root{color-scheme:dark;--bg:#0b141c;--panel:#12212c;--ink:#eef5f7;--dim:#b2c3ce;--line:#314653;--mint:#75eac3;--amber:#ffcd7f;--violet:#b8afff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif}main{max-width:1130px;margin:auto;padding:34px 24px}h1,h2,p{margin:0}h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.1;letter-spacing:-.055em}h2{font-size:1rem}p{color:var(--dim)}.kicker,.mono,.tag{font:700 .73rem/1.5 ui-monospace,monospace;letter-spacing:.085em;text-transform:uppercase}.kicker{color:var(--mint);margin-bottom:8px}.lede{margin:10px 0 20px;max-width:75ch}.layout{display:grid;grid-template-columns:1.35fr 1fr;gap:14px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:16px;min-width:0}.map{width:100%;display:block;margin:8px 0 0}.map text{font:600 15px system-ui;fill:var(--ink)}.map .small{font-size:13px;fill:#d3e1e8}.beam{opacity:.35}.beam.live{opacity:1}.beam.dead{stroke:#ff9388;opacity:1;stroke-dasharray:4 9}.near{display:grid;gap:8px}.node{padding:9px 11px;border:1px solid var(--line);border-radius:9px}.node.on{border-color:var(--mint)}.node b{display:block}.node small, .caption{font-size:.86rem;color:var(--dim)}.bar{display:flex;height:7px;gap:3px;margin:7px 0 2px}.bar i{background:#5ebfa4;border-radius:2px}.bar i+i{background:#61778a}.out{margin-top:14px;min-height:114px;border-left:3px solid var(--mint)}.out.bad{border-left-color:#ff9388}.controls{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:14px 0 10px}button{cursor:pointer;border:1px solid #59707f;color:var(--ink);background:#172a38;padding:8px 13px;border-radius:8px;font:inherit}button:hover:enabled{background:#233f51}button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}button.primary{background:var(--mint);color:#0b241c;border-color:var(--mint);font-weight:700}button[aria-pressed=true]{border-color:#ff9388;color:#ffb5ad}button:disabled{opacity:.45;cursor:default}#position{margin-left:auto;color:var(--dim)}.track{margin-top:14px}.timeline{display:grid;grid-template-columns:minmax(49px,.7fr) repeat(5,minmax(0,1fr));gap:5px;align-items:center;margin:10px 0}.slot,.tick{text-align:center}.slot{border-radius:5px;background:#213541;padding:6px 0;font-weight:800}.slot.a{background:var(--mint);color:#0d2824}.slot.b{background:var(--amber);color:#302007}.slot.c{background:var(--violet);color:#25194b}.slot.now{outline:2px solid white;outline-offset:1px}.slot.lost{background:#592e34;color:#ffe3e0}.legend{display:flex;gap:12px;flex-wrap:wrap}.fine{font-size:.84rem;margin-top:14px}.foot{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.foot p{font-size:.87rem;margin-top:4px}@media(max-width:720px){main{padding:23px 12px}.layout,.foot{grid-template-columns:1fr}.panel{padding:12px}.out{min-height:0}#position{margin-left:0}}
+</style>
+<main>
+<header><div class="kicker">Bob the Builder / concept of operations</div><h1>Three drones, one model</h1><p class="lede">After launch, three drones survey an earthworks site. Can they tell whether the planned haul route has changed, and recommend what the operator should inspect next?</p></header>
+<section class="layout">
+<div class="panel"><h2>01 / Survey scene</h2>
+<svg class="map" viewBox="0 0 556 300" role="img" aria-labelledby="map-title"><title id="map-title">Construction site looking down, with three observation positions, a spoil pile across the haul road and an exit hidden from view.</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#2b434e" stroke-width="1"/></pattern><pattern id="hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><path d="M0 0V8" stroke="#8d9aad" stroke-width="2"/></pattern><g id="quad" stroke="#e4f4f7" fill="#182b39" stroke-width="2"><path d="M-11 -11L11 11M-11 11L11 -11"/><circle cx="-11" cy="-11" r="6"/><circle cx="11" cy="-11" r="6"/><circle cx="-11" cy="11" r="6"/><circle cx="11" cy="11" r="6"/><circle r="5" fill="#75eac3"/></g><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#75eac3"/></marker></defs>
+<rect width="556" height="300" rx="10" fill="#172c34"/><rect width="556" height="300" rx="10" fill="url(#grid)"/>
+<path d="M0 222H307Q409 222 452 151L556 151" fill="none" stroke="#6b6150" stroke-width="54"/><path d="M0 222H307Q409 222 452 151L556 151" fill="none" stroke="#c4ab79" stroke-dasharray="12 10" stroke-width="2"/>
+<path d="M30 60H152V120H30z" fill="#24494c" stroke="#63938e" stroke-dasharray="5 5"/><text x="43" y="94">Staging pad</text>
+<path d="M245 234l9-28 18-21 21 12 11 24-20 19z" fill="#d59760" stroke="#ffcd7f" stroke-width="2"/><text x="239" y="263">Spoil pile</text>
+<path d="M431 131h123v59H431z" fill="url(#hatch)" opacity=".7"/><text x="433" y="209">Exit not visible</text><text x="24" y="258" class="small">Planned haul road</text>
+<path d="M139 147L255 211L263 237Z" fill="#75eac3" opacity=".12"/><path d="M303 76L257 218L296 239Z" fill="#ffcd7f" opacity=".11"/><path d="M460 74L439 136L514 144Z" fill="#b8afff" opacity=".13"/>
+<path id="link1" class="beam" d="M161 139L282 85" stroke="#75eac3" stroke-width="3" marker-end="url(#arrow)"/><path id="link2" class="beam" d="M327 76L436 74" stroke="#75eac3" stroke-width="3" marker-end="url(#arrow)"/>
+<path id="return" d="M448 57Q280 -31 146 124" fill="none" stroke="#75eac3" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)" visibility="hidden"/><use href="#quad" x="139" y="147"/><use href="#quad" x="303" y="76"/><use href="#quad" x="460" y="74"/>
+<text x="111" y="181">Drone 1</text><text x="274" y="49">Drone 2</text><text x="432" y="47">Drone 3</text>
+</svg>
+<p class="caption">Dashed centreline: planned route. Hatching: unverified area.</p></div>
+<div class="panel near"><h2>02 / One VLM split across three computers</h2>
+<div class="node" id="stage1"><b>Drone 1 · vision encoder + early layers</b><small>Encodes images once per request. Sends intermediate tensors, not weights.</small><div class="bar" aria-hidden="true"><i style="width:75%"></i><i style="width:25%"></i></div><small>1.5 GB weights · 0.5 GB runtime allowance</small></div>
+<div class="node" id="stage2"><b>Drone 2 · middle layers</b><small>Transforms activations. Keeps its own attention cache.</small><div class="bar" aria-hidden="true"><i style="width:75%"></i><i style="width:25%"></i></div><small>1.5 GB weights · 0.5 GB runtime allowance</small></div>
+<div class="node" id="stage3"><b>Drone 3 · final layers + output</b><small>Produces output tokens; each next token goes back to stage 1.</small><div class="bar" aria-hidden="true"><i style="width:75%"></i><i style="width:25%"></i></div><small>1.5 GB weights · 0.5 GB runtime allowance</small></div>
+<p class="caption">Illustrative budgets after local workloads: 2 GB spare per drone, 4.5 GB of weights spread across the fleet. Not one shared memory space.</p></div>
+</section>
+<div class="controls"><button id="play" class="primary">▶ Play</button><button id="back">← Back</button><button id="next">Next →</button><button id="drop" aria-pressed="false">Drop link 2 → 3</button><span id="position" class="mono"></span></div>
+<section class="panel out" id="result" aria-live="polite"><div class="kicker" id="eyebrow"></div><h2 id="heading"></h2><p id="detail"></p></section>
+<section class="panel track"><h2>03 / Requests overlap during prefill</h2><p class="caption">Schematic slots, not seconds. Read across for each drone and down for concurrency.</p><div id="timeline" class="timeline" aria-label="Pipeline timeline"></div><p class="caption legend"><span>A · Haul-road obstruction</span><span>B · Staging-pad occupancy</span><span>C · Exit visibility</span></p></section>
+<div class="foot">
+<section class="panel"><h2>What the pipeline changes</h2><p>Three separate requests can occupy different stages at once. A single answer still crosses every stage for each generated token, so more stages do not necessarily make it faster. The 4.5 GB example will not fit on one 2 GB node.</p></section>
+<section class="panel"><h2>What stays local</h2><p>Flight and collision avoidance never depend on model output or the inference link. The pipeline returns an advisory recommendation to the operator, not a flight command. A stale or incomplete result is withheld.</p></section>
+</div>
+<p class="fine">Scripted CONOPS simulation. No models, photos, aircraft or radio links were used in this walkthrough. Memory and scheduling are illustrative, not hardware measurements. Before deployment, verify per-stage peak memory, link latency and interference with local workloads.</p>
+</main>
+<script>
+const steps=[
+ ['Observe','Three viewpoints, one site','The operator requests a survey. Drones collect timestamped views. Selected images and their context go to Drone 1 for the appropriate request.'],
+ ['Prefill · slot 1','Start with the road','Drone 1 encodes the selected road views and runs its early layers for request A.'],
+ ['Prefill · slot 2','Pass activations to Drone 2','Drone 2 advances A while Drone 1 starts a separate staging-pad request, B.'],
+ ['Prefill · slot 3','All three stages are busy','Drone 3 finishes prefill for A, Drone 2 advances B, and Drone 1 starts the exit-visibility request, C. This is pipeline parallelism.'],
+ ['Prefill · slot 4','The remaining requests advance','Drone 3 finishes prefill for B while Drone 2 advances C. This simplified trace drains prefill before showing decode.'],
+ ['Prefill · slot 5','Prefill completes','Drone 3 finishes prefill for C. Each stage retains its own attention cache for each request.'],
+ ['Decode','Generate the answer one token at a time','For request A, each sampled token returns to Drone 1 and the next pass traverses all three stages. The images do not need re-encoding.'],
+ ['Operator decision','Flag the road. Verify the exit.','Example advisory: “Spoil pile appears to block the planned haul road. Exit is not verified. Ask the site supervisor to confirm access before routing equipment.”']
+];
+const grid=[['A','B','C','·','·'],['·','A','B','C','·'],['·','·','A','B','C']];
+let step=0,failed=false,timer=null;const el=id=>document.getElementById(id);
+function stop(){clearInterval(timer);timer=null;el('play').textContent='▶ Play'}
+function render(){
+ const down=failed&&step>=3; const item=down?['Degraded mode','Link lost. No shared-model recommendation.','The coordinator times out the unfinished requests and discards partial outputs. Local perception and flight continue independently. Recheck scene freshness before retrying once connected.']:steps[step];
+ el('eyebrow').textContent=item[0];el('heading').textContent=item[1];el('detail').textContent=item[2];el('result').classList.toggle('bad',down);
+ el('position').textContent=down?'Link failure':`Step ${step+1} / ${steps.length}`;
+ el('play').disabled=down;el('back').disabled=step===0;el('next').disabled=step===steps.length-1||down;
+ el('drop').setAttribute('aria-pressed',String(failed));el('drop').textContent=failed?'Restore link 2 → 3':'Drop link 2 → 3';
+ el('link1').classList.toggle('live',step>=2&&step<=6&&!down);el('link2').classList.toggle('live',step>=3&&step<=6&&!down);el('link2').classList.toggle('dead',down);
+ el('link2').setAttribute('marker-end',down?'':'url(#arrow)');el('return').setAttribute('visibility',step===6&&!down?'visible':'hidden');
+ const cells=['<span></span>',...grid[0].map((_,j)=>`<span class="mono tick">${j+1}</span>`)];
+ grid.forEach((row,i)=>{
+   el('stage'+(i+1)).classList.toggle('on',!down&&(step===6||(step>=1&&step<=5&&row[step-1]!=='·')));
+   cells.push(`<span class="mono">Drone ${i+1}</span>`);
+   row.forEach((v,j)=>{
+     const lost=down&&j>=2;
+     const seen=j+1<=step;
+     const now=j+1===step&&v!=='·'&&!down;
+     cells.push(`<span class="slot ${lost?'lost':''} ${seen&&!lost?v.toLowerCase():''} ${now?'now':''}" aria-label="${lost?'Cancelled':seen?'Request '+v:'Upcoming'}">${lost?'×':seen?v:'·'}</span>`);
+   });
+ });
+ el('timeline').innerHTML=cells.join('');
+}
+el('back').onclick=()=>{stop();step=Math.max(0,step-1);render()};
+el('next').onclick=()=>{stop();if(!(failed&&step>=3))step=Math.min(steps.length-1,step+1);render()};
+el('drop').onclick=()=>{stop();failed=!failed;step=failed?3:0;render()};
+el('play').onclick=()=>{if(timer){stop();return}if(failed&&step>=3)return;if(step===steps.length-1){step=0;render()}el('play').textContent='Ⅱ Pause';timer=setInterval(()=>{step++;render();if(step>=steps.length-1||(failed&&step>=3))stop()},2000)};
+render();
+</script></html>
